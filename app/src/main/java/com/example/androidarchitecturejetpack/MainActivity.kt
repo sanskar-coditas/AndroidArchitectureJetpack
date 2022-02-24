@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
 
     fun setText() {
-        textForCount.text=mainViewModel.count.toString()
+        textForCount.text=mainViewModel.count.toString()//to set the count to textView
     }
 
     override fun onResume() {

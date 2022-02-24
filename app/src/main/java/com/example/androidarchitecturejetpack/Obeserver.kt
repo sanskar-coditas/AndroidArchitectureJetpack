@@ -4,13 +4,11 @@ import android.util.Log
 import androidx.lifecycle.*
 
 class Obeserver: DefaultLifecycleObserver {
-//this is an observer to minimize the code in main activity.
+//this is an observer to minimize the code in main activity. //these are predefined methods of DefaultLifecycleObserver (LifeCycleEvent is deprecated)
+
  override fun onCreate(owner: LifecycleOwner) {
   super.onCreate(owner)
   Log.d("Main","OBSERVER ON CREATE")
-
-
-
  }
 
  override fun onResume(owner: LifecycleOwner) {
