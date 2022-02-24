@@ -8,6 +8,9 @@ class Obeserver: DefaultLifecycleObserver {
  override fun onCreate(owner: LifecycleOwner) {
   super.onCreate(owner)
   Log.d("Main","OBSERVER ON CREATE")
+
+
+
  }
 
  override fun onResume(owner: LifecycleOwner) {
