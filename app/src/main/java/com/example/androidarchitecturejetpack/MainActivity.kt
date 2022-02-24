@@ -16,9 +16,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)//provides view model, passing lifecycle
-
-
+        mainViewModel = ViewModelProvider(this,MainViewModelFactory(10)).get(MainViewModel::class.java)//provides view model, passing lifecycle
+        //TO make an object we used ViewModelProvider and passed lifecycle owner(this) and which class object we need
+        //2ed parameter is  fixed value that we want pass to the view model using viewModelFactory
 
         val buttonClick :Button=findViewById(R.id.buttonForCount)
          textForCount=findViewById(R.id.txtForCount)
