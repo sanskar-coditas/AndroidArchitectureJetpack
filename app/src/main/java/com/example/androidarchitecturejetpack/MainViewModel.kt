@@ -13,8 +13,8 @@ class MainViewModel(InitialValue:Int):ViewModel() {     //InitialValue is the va
        count++
    }
 
-
-   private val factsLiveDataObject = MutableLiveData("This id a fact") // this is update live data (we can change
+// Live Data concept
+ val factsLiveDataObject = MutableLiveData("This id a fact") // this is update live data (we can change
                                                                                 // the data)
     val factsLiveData : LiveData<String> // just normal Livedata implementation
     get() = factsLiveDataObject // getting factsLiveDataObject here ( does not change output)

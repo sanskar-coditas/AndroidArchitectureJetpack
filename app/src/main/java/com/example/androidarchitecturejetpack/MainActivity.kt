@@ -14,8 +14,8 @@ import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
    lateinit var mainViewModel: MainViewModel
-   lateinit var textForCount : TextView
-    lateinit var textForLiveData : TextView
+ //  lateinit var textForCount : TextView
+   // lateinit var textForLiveData : TextView
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,11 +32,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonForCount.setOnClickListener {
             mainViewModel.Increment()
-
-            mainViewModel.updateLiveData() // to call the method
-
+            Log.d("Button click","check")
            setText()
-
         }
    setText()
 
@@ -44,20 +41,24 @@ class MainActivity : AppCompatActivity() {
         lifecycle.addObserver(Obeserver())
         Log.d("Main","ACTIVITY OnCreate")
 
-
-
-        mainViewModel.factsLiveData.observe(this, Observer {
+      /*  mainViewModel.factsLiveData.observe(this, Observer {
             // it is string because factsLivedata is string
 
             //whenever the livedata will change the this code will get executed..
 
             binding.txtViewForLiveData.text = it //update the value with string of mutable live data
 
-
-        })
+        })*/
     //1st parameter is lifecycle owner on the basis of
     //that it will decide data send or not. it only sends data
     // it its in active state.
+       // we have directly called factsViewModel in xml so we did not need to write this code..
+
+       binding.lifecycleOwner= this// we set lifecycle owner so that it be aware of that ..
+
+
+
+        binding.mainViewModel = mainViewModel // setting viewmodel variable into binding object
 
 
     }

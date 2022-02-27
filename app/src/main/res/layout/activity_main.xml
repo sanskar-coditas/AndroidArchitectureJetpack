@@ -2,6 +2,14 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="mainViewModel"
+            type="com.example.androidarchitecturejetpack.MainViewModel" />
+        <variable
+            name="mainViewModelForInc"
+            type="com.example.androidarchitecturejetpack.MainViewModel" />
+    </data>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -9,6 +17,16 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={mainViewModel.factsLiveDataObject}"
+            app:layout_constraintBottom_toBottomOf="@+id/txtViewForLiveData"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
         <Button
             android:id="@+id/buttonForCount"
             android:layout_width="wrap_content"
@@ -18,9 +36,25 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/txtForCount"
+            android:layout_marginRight="150dp"
+
+
+
 
             />
+        <Button
+            android:id="@+id/buttonForLiveData"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="LiveData update"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/buttonForCount"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txtForCount"
+            android:onClick="@{()->mainViewModel.updateLiveData() }"
+            android:layout_marginStart="120dp"
 
+            />
         <TextView
             android:id="@+id/txtForCount"
             android:layout_width="wrap_content"
@@ -31,19 +65,22 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginEnd="150dp"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+
+            />
 
         <TextView
             android:id="@+id/txtViewForLiveData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Live Data Text"
+            android:text="@{mainViewModel.factsLiveData}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="@+id/txtForCount"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="30dp"
             android:textSize="20sp"
+
 
             />
 
