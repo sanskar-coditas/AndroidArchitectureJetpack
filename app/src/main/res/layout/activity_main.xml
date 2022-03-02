@@ -9,6 +9,9 @@
         <variable
             name="mainViewModelForInc"
             type="com.example.androidarchitecturejetpack.MainViewModel" />
+        <variable
+            name="post"
+            type="com.example.androidarchitecturejetpack.Post" />
     </data>
 
 
@@ -83,6 +86,7 @@
 
 
             />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

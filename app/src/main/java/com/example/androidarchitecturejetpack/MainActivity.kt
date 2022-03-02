@@ -28,8 +28,6 @@ class MainActivity : AppCompatActivity() {
         //2ed parameter is  fixed value that we want pass to the view model using viewModelFactory
 
 
-
-
         binding.buttonForCount.setOnClickListener {
             mainViewModel.Increment()
             Log.d("Button click","check")
